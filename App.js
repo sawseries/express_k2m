@@ -10,7 +10,11 @@ const cors = require('cors')
 const app = express()
 app.use(express.json())
 
-app.get('/', (req, res) => res.success({ message: 'It works!' }))
+//app.get('/', (res,req)  => res.success({ message: 'It works!' }))
+
+app.get ('/', (req, res) => {
+  res.send("hello world")
+})
 
 var autoRoutes = require('express-auto-routes')(app); 
 autoRoutes(path.join(__dirname, './routes')); 
